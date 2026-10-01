@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" role="img" aria-labelledby="t d">
+  <title id="t">inventario-multibodega</title>
+  <desc id="d">Kárdex valorizado con costo promedio ponderado, transferencias atómicas entre bodegas, lotes FEFO y escaneo GS1.</desc>
+  <style>
+    .f { font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif; }
+    .h { font-size: 30px; font-weight: 700; fill: #0f172a; }
+    .s { font-size: 15px; fill: #475569; }
+    .bt { font-size: 16px; font-weight: 600; fill: #0f172a; }
+    .bs { font-size: 12.5px; fill: #475569; }
+    .th { font-size: 12px; font-weight: 700; fill: #475569; letter-spacing: .3px; }
+    .td { font-size: 13px; fill: #0f172a; }
+    .num { font-family: Consolas, "SFMono-Regular", Menlo, monospace; font-size: 13px; fill: #0f172a; }
+    .chip { font-size: 12.5px; font-weight: 600; }
+  </style>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#0f766e"/>
+    </marker>
+    <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.2" fill="#e2e8f0"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="500" fill="#f8fafc"/>
+  <rect width="800" height="500" fill="url(#dots)"/>
+  <rect x="0" y="0" width="800" height="6" fill="#0f766e"/>
+
+  <text class="f h" x="40" y="62">inventario-multibodega</text>
+  <text class="f s" x="40" y="90">Kárdex valorizado (NIC 2) · lotes FEFO · conteo cíclico aprobado</text>
+
+  <!-- Bodegas y transferencia -->
+  <g class="f">
+    <rect x="40" y="122" width="210" height="92" rx="12" fill="#fff" stroke="#cbd5e1"/>
+    <text class="bt" x="60" y="152">Bodega Matriz</text>
+    <text class="bs" x="60" y="174">A-01-03 · lote L2026-07</text>
+    <text class="bs" x="60" y="194">vence 2026-11-30</text>
+
+    <rect x="550" y="122" width="210" height="92" rx="12" fill="#fff" stroke="#cbd5e1"/>
+    <text class="bt" x="570" y="152">Bodega Sucursal</text>
+    <text class="bs" x="570" y="174">B-02-01 · lote L2026-07</text>
+    <text class="bs" x="570" y="194">despacho FEFO</text>
+
+    <line x1="258" y1="168" x2="542" y2="168" stroke="#0f766e" stroke-width="2.5" marker-end="url(#a)"/>
+    <rect x="300" y="146" width="200" height="26" rx="13" fill="#ccfbf1"/>
+    <text class="chip" x="400" y="164" text-anchor="middle" fill="#115e59">transferencia atómica</text>
+    <text class="bs" x="400" y="194" text-anchor="middle">si un renglón falla, no se aplica nada</text>
+  </g>
+
+  <!-- Kárdex -->
+  <g class="f">
+    <rect x="40" y="236" width="720" height="176" rx="12" fill="#fff" stroke="#cbd5e1"/>
+    <text class="bt" x="60" y="264">Kárdex · costo promedio ponderado móvil</text>
+    <line x1="56" y1="278" x2="744" y2="278" stroke="#e2e8f0"/>
+    <text class="th" x="60" y="296">MOVIMIENTO</text>
+    <text class="th" x="330" y="296" text-anchor="end">CANT.</text>
+    <text class="th" x="450" y="296" text-anchor="end">COSTO U.</text>
+    <text class="th" x="560" y="296" text-anchor="end">SALDO</text>
+    <text class="th" x="660" y="296" text-anchor="end">PROMEDIO</text>
+    <text class="th" x="744" y="296" text-anchor="end">VALOR</text>
+    <line x1="56" y1="306" x2="744" y2="306" stroke="#e2e8f0"/>
+
+    <text class="td" x="60" y="328">Ingreso · factura de compra</text>
+    <text class="num" x="330" y="328" text-anchor="end">+100</text>
+    <text class="num" x="450" y="328" text-anchor="end">2,0000</text>
+    <text class="num" x="560" y="328" text-anchor="end">100</text>
+    <text class="num" x="660" y="328" text-anchor="end">2,0000</text>
+    <text class="num" x="744" y="328" text-anchor="end">200,00</text>
+
+    <text class="td" x="60" y="354">Ingreso · factura de compra</text>
+    <text class="num" x="330" y="354" text-anchor="end">+50</text>
+    <text class="num" x="450" y="354" text-anchor="end">2,6000</text>
+    <text class="num" x="560" y="354" text-anchor="end">150</text>
+    <text class="num" x="660" y="354" text-anchor="end">2,2000</text>
+    <text class="num" x="744" y="354" text-anchor="end">330,00</text>
+
+    <text class="td" x="60" y="380">Egreso · despacho FEFO</text>
+    <text class="num" x="330" y="380" text-anchor="end">−60</text>
+    <text class="num" x="450" y="380" text-anchor="end">2,2000</text>
+    <text class="num" x="560" y="380" text-anchor="end">90</text>
+    <text class="num" x="660" y="380" text-anchor="end">2,2000</text>
+    <text class="num" x="744" y="380" text-anchor="end">198,00</text>
+
+    <rect x="56" y="390" width="688" height="14" rx="4" fill="#f0fdfa"/>
+    <text class="bs" x="60" y="401">conciliación: kárdex = stock = valorización</text>
+  </g>
+
+  <!-- Chips -->
+  <g class="f chip">
+    <rect x="40" y="430" width="150" height="30" rx="15" fill="#e0f2fe"/>
+    <text x="115" y="450" text-anchor="middle" fill="#075985">GTIN · GS1-128 · QR</text>
+    <rect x="202" y="430" width="160" height="30" rx="15" fill="#ede9fe"/>
+    <text x="282" y="450" text-anchor="middle" fill="#5b21b6">@Version · 16 hilos</text>
+    <rect x="374" y="430" width="186" height="30" rx="15" fill="#fef3c7"/>
+    <text x="467" y="450" text-anchor="middle" fill="#92400e">conteo ciego + aprobación</text>
+    <rect x="572" y="430" width="188" height="30" rx="15" fill="#dcfce7"/>
+    <text x="666" y="450" text-anchor="middle" fill="#166534">89 tests · 85 % cobertura</text>
+  </g>
+  <text class="f bs" x="760" y="486" text-anchor="end">Spring Boot · PostgreSQL · Testcontainers</text>
+</svg>

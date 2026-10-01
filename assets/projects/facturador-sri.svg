@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" role="img" aria-labelledby="t d">
+  <title id="t">facturador-sri</title>
+  <desc id="d">Flujo de un comprobante electrónico: venta POS, XML validado con XSD, firma XAdES-BES, recepción y autorización del SRI y RIDE en PDF.</desc>
+  <style>
+    .f { font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif; }
+    .h { font-size: 30px; font-weight: 700; fill: #0f172a; }
+    .s { font-size: 15px; fill: #475569; }
+    .bt { font-size: 16px; font-weight: 600; fill: #0f172a; }
+    .bs { font-size: 12.5px; fill: #475569; }
+    .st { font-size: 12px; font-weight: 700; letter-spacing: .5px; }
+    .mono { font-family: Consolas, "SFMono-Regular", Menlo, monospace; font-size: 13px; fill: #1e3a8a; }
+  </style>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#64748b"/>
+    </marker>
+    <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.2" fill="#e2e8f0"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="500" fill="#f8fafc"/>
+  <rect width="800" height="500" fill="url(#dots)"/>
+  <rect x="0" y="0" width="800" height="6" fill="#1d4ed8"/>
+
+  <text class="f h" x="40" y="62">facturador-sri</text>
+  <text class="f s" x="40" y="90">Comprobantes electrónicos del SRI (esquema offline) · POS + inventario</text>
+
+  <!-- Pipeline -->
+  <g class="f">
+    <rect x="40" y="130" width="160" height="86" rx="12" fill="#fff" stroke="#cbd5e1"/>
+    <text class="bt" x="120" y="166" text-anchor="middle">Venta POS</text>
+    <text class="bs" x="120" y="188" text-anchor="middle">factura · nota de crédito</text>
+
+    <rect x="228" y="130" width="160" height="86" rx="12" fill="#fff" stroke="#cbd5e1"/>
+    <text class="bt" x="308" y="166" text-anchor="middle">XML + XSD</text>
+    <text class="bs" x="308" y="188" text-anchor="middle">ficha técnica oficial</text>
+
+    <rect x="416" y="130" width="160" height="86" rx="12" fill="#fff" stroke="#cbd5e1"/>
+    <text class="bt" x="496" y="166" text-anchor="middle">Firma XAdES-BES</text>
+    <text class="bs" x="496" y="188" text-anchor="middle">certificado PKCS#12</text>
+
+    <rect x="604" y="130" width="156" height="86" rx="12" fill="#eff6ff" stroke="#1d4ed8"/>
+    <text class="bt" x="682" y="166" text-anchor="middle">SRI offline</text>
+    <text class="bs" x="682" y="188" text-anchor="middle">recepción → autorización</text>
+  </g>
+  <g stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#a)">
+    <line x1="202" y1="173" x2="224" y2="173"/>
+    <line x1="390" y1="173" x2="412" y2="173"/>
+    <line x1="578" y1="173" x2="600" y2="173"/>
+  </g>
+
+  <!-- Estados -->
+  <text class="f s" x="40" y="262">Máquina de estados con idempotencia por clave de acceso</text>
+  <g class="f st">
+    <rect x="40" y="278" width="112" height="34" rx="17" fill="#e2e8f0"/>
+    <text x="96" y="300" text-anchor="middle" fill="#334155">GENERADO</text>
+    <rect x="176" y="278" width="104" height="34" rx="17" fill="#e0e7ff"/>
+    <text x="228" y="300" text-anchor="middle" fill="#3730a3">FIRMADO</text>
+    <rect x="304" y="278" width="110" height="34" rx="17" fill="#dbeafe"/>
+    <text x="359" y="300" text-anchor="middle" fill="#1e40af">RECIBIDO</text>
+    <rect x="438" y="278" width="130" height="34" rx="17" fill="#dcfce7"/>
+    <text x="503" y="300" text-anchor="middle" fill="#166534">AUTORIZADO</text>
+    <rect x="592" y="278" width="168" height="34" rx="17" fill="#fee2e2"/>
+    <text x="676" y="300" text-anchor="middle" fill="#991b1b">DEVUELTA / NO AUT.</text>
+  </g>
+  <g stroke="#94a3b8" stroke-width="2" fill="none" marker-end="url(#a)">
+    <line x1="153" y1="295" x2="172" y2="295"/>
+    <line x1="281" y1="295" x2="300" y2="295"/>
+    <line x1="415" y1="295" x2="434" y2="295"/>
+    <line x1="569" y1="295" x2="588" y2="295"/>
+  </g>
+
+  <!-- Clave de acceso y RIDE -->
+  <g class="f">
+    <rect x="40" y="342" width="440" height="118" rx="12" fill="#fff" stroke="#cbd5e1"/>
+    <text class="bt" x="60" y="372">Clave de acceso · 49 dígitos</text>
+    <text class="mono" x="60" y="400">fecha · tipo · RUC · ambiente · serie</text>
+    <text class="mono" x="60" y="420">secuencial · código · emisión · DV</text>
+    <text class="bs" x="60" y="444">dígito verificador módulo 11, probado con casos de la ficha</text>
+
+    <rect x="504" y="342" width="256" height="118" rx="12" fill="#fff" stroke="#cbd5e1"/>
+    <text class="bt" x="524" y="372">RIDE en PDF</text>
+    <g fill="#0f172a">
+      <rect x="524" y="388" width="3" height="40"/><rect x="530" y="388" width="1.5" height="40"/>
+      <rect x="534" y="388" width="4" height="40"/><rect x="541" y="388" width="1.5" height="40"/>
+      <rect x="545" y="388" width="2.5" height="40"/><rect x="551" y="388" width="4" height="40"/>
+      <rect x="558" y="388" width="1.5" height="40"/><rect x="562" y="388" width="3" height="40"/>
+      <rect x="568" y="388" width="1.5" height="40"/><rect x="572" y="388" width="4" height="40"/>
+      <rect x="579" y="388" width="2.5" height="40"/><rect x="585" y="388" width="1.5" height="40"/>
+      <rect x="589" y="388" width="3" height="40"/><rect x="595" y="388" width="4" height="40"/>
+      <rect x="602" y="388" width="1.5" height="40"/><rect x="606" y="388" width="2.5" height="40"/>
+      <rect x="612" y="388" width="4" height="40"/><rect x="619" y="388" width="1.5" height="40"/>
+      <rect x="623" y="388" width="3" height="40"/><rect x="629" y="388" width="1.5" height="40"/>
+    </g>
+    <text class="bs" x="524" y="448">código de barras de la clave de acceso</text>
+  </g>
+  <text class="f bs" x="760" y="488" text-anchor="end">SRI simulado con WireMock · Spring Boot · Angular · PostgreSQL</text>
+</svg>

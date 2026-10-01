@@ -11,7 +11,7 @@
 | 7 | github-linguist: languages.yml | https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml | 2026-09-30 | Colores por lenguaje para que la tarjeta coincida con la barra de GitHub. |
 | 8 | Releases oficiales de actions/checkout y actions/setup-python | https://github.com/actions/checkout/releases · https://github.com/actions/setup-python/releases | 2026-09-30 | Versiones estables v7.0.1 y v7.0.0, fijadas por SHA. |
 | 9 | PyPI: pytest, pytest-cov y ruff | https://pypi.org/project/pytest/ · https://pypi.org/project/pytest-cov/ · https://pypi.org/project/ruff/ | 2026-09-30 | Versiones estables 9.1.1, 7.1.0 y 0.16.9. |
-| 10 | RENAFIPSE | https://renafipse.ec/ | 2026-09-30 | Nombre oficial de la institución de las prácticas: Red Nacional de Finanzas Populares y Solidarias del Ecuador. |
+| 10 | RENAFIPSE (sitio solo en HTTP) | http://renafipse.ec/ | 2026-09-30 | Nombre oficial de la institución de las prácticas: Red Nacional de Finanzas Populares y Solidarias del Ecuador. |
 
 ## Supuestos (no verificados)
 - Ninguno. Los datos de proyectos, formación y certificaciones salen de los repositorios y del CV del autor; cada certificación enlaza a su verificación oficial.

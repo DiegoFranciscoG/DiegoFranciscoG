@@ -11,7 +11,7 @@
 
 ## Sobre mí
 
-Soy **Tecnólogo Superior en Desarrollo de Software** (Instituto Superior Tecnológico del Azuay, 2026). Construyo software empresarial para Ecuador a partir de la norma oficial: facturación electrónica del SRI, nómina con IESS y Código del Trabajo, contabilidad NIIF para PYMES con el catálogo de la Supercias y protección de datos con la LOPDP.
+Soy **Desarrollador de Software**. Construyo software empresarial para Ecuador a partir de la norma oficial: facturación electrónica del SRI, nómina con IESS y Código del Trabajo, contabilidad NIIF para PYMES con el catálogo de la Supercias y protección de datos con la LOPDP.
 
 - **Experiencia:** prácticas preprofesionales en **RENAFIPSE** (Red Nacional de Finanzas Populares y Solidarias del Ecuador), diciembre de 2025 a febrero de 2026: bases de datos y desarrollo en Java con NetBeans.
 - **Busco:** mi primer empleo como desarrollador backend o full-stack (Java y Spring Boot, C# y .NET, Python). Presencial en Cuenca, híbrido o remoto.
